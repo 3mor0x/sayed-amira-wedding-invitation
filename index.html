@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>دعوة زفاف سيد & أميرة</title>
+    <!-- Favicon ذهبي ملكي -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%230b1522%22 stroke=%22%23c5a059%22 stroke-width=%224%22/><text x=%2250%%22 y=%2255%%22 font-size=%2255%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 fill=%22%23c5a059%22 font-family=%22serif%22>✨</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- خلفية الجزيئات الحية -->
+    <canvas id="particles-canvas"></canvas>
+
+    <audio id="bg-music" loop preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="audio-btn float-anim" onclick="toggleAudio()" id="audio-toggle" aria-label="تشغيل الموسيقى">🎵</button>
+
+    <!-- شاشة البوابة والترحيب -->
+    <div class="hero-gate" id="heroGate">
+        <div class="hero-card shine-effect">
+            <div class="card-ornament top">❖ ═══ ⊰ ⚜️ ⊱ ═══ ❖</div>
+            <div class="heart-badge pulse-anim">💍</div>
+            <h1 class="hero-title">SAYED & AMIRA</h1>
+            <p class="hero-arabic-names">سَيِّـدٌ ❦ أَمِيـرَة</p>
+            <div class="gold-divider">✤ ══ ⊰ ✦ ⊱ ══ ✤</div>
+            <p class="hero-date">17 . OCT . 2026</p>
+            <p class="hero-sub">« أَنْتُم لِفَرْحَتِنَا عِطْرُهَا وَبَهْجَتُهَا »</p>
+            <button class="open-btn shine-effect" onclick="openInvitation()">افْتَحِ الدَّعْـوَةَ ✉️</button>
+            <div class="card-ornament bottom">❖ ═══ ⊰ ⚜️ ⊱ ═══ ❖</div>
+        </div>
+    </div>
+
+    <!-- الحاوية الأساسية -->
+    <div class="mobile-container">
+        
+        <!-- الهيدر والأسماء -->
+        <div class="header-frame">
+            <div class="royal-border">
+                <div class="frame-decor corner-tl">⚜️</div>
+                <div class="frame-decor corner-tr">⚜️</div>
+                <div class="frame-decor corner-bl">⚜️</div>
+                <div class="frame-decor corner-br">⚜️</div>
+                <div class="floral-header-top">❖ ════ ⊰ 🌸 🕊️ 🌸 ⊱ ════ ❖</div>
+                <h1 id="main-names" class="arabic-names glow-text">سَيِّـــدٌ<br><span class="and-symbol">❦ & ❦</span><br>أَمِيـــرَة</h1>
+                <div class="floral-header-bottom">❖ ════ ⊰ ✨ ⊱ ════ ❖</div>
+            </div>
+        </div>
+
+        <!-- الآية الكريمة -->
+        <div class="quran-box decor-box">
+            <p class="bismillah">﷽</p>
+            <p class="quran-verse">« وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً »</p>
+        </div>
+
+        <!-- تم استبدال الكلمة بـ صورة العروسين -->
+        <div class="ornate-heading">
+            <span class="ornament-wing">❖ ══</span>
+            <span class="heading-text">صُـورَةُ الْعَرُوسَيْـنِ</span>
+            <span class="ornament-wing">══ ❖</span>
+        </div>
+        <div class="photo-gallery-box">
+            <div class="photo-card shine-effect">
+                <img src="couple.jpg" alt="صورة العروسين سيد وأميرة">
+            </div>
+        </div>
+
+        <!-- كارت الدعوة والأسماء -->
+        <div class="couple-names-box decor-box">
+            <div class="person-card">
+                <h2 class="wide-name">سَيِّـــدٌ</h2>
+                <span class="role">العَرِيسُ</span>
+            </div>
+            <div class="amp float-anim">⚜️</div>
+            <div class="person-card">
+                <h2 class="wide-name">أَمِيـــرَة</h2>
+                <span class="role">العَرُوسُ</span>
+            </div>
+        </div>
+
+        <!-- صورة الذكرى / الصغار -->
+        <div class="ornate-heading">
+            <span class="ornament-wing">❖ ══</span>
+            <span class="heading-text">حِكَايَةُ عُمْـرٍ</span>
+            <span class="ornament-wing">══ ❖</span>
+        </div>
+        <div class="photo-gallery-box">
+            <div class="photo-card shine-effect">
+                <img src="kids.jpg" alt="صورة الذكرى">
+            </div>
+        </div>
+
+        <!-- تفاصيل الموعد والعداد -->
+        <div class="ornate-heading">
+            <span class="ornament-wing">❖ ══</span>
+            <span class="heading-text">مَوْعِـدُنَا</span>
+            <span class="ornament-wing">══ ❖</span>
+        </div>
+        <div class="event-time pulse-anim">07:30 PM</div>
+        <div class="event-date-row">
+            <span>السَّبْتُ</span>
+            <span class="divider">❖</span>
+            <span>17</span>
+            <span class="divider">❖</span>
+            <span>10</span>
+            <span class="divider">❖</span>
+            <span>2026</span>
+        </div>
+
+        <div class="countdown decor-box">
+            <div class="count-item"><span class="count-num" id="days">00</span><span class="count-lbl">أَيَّامٌ</span></div>
+            <div class="count-item"><span class="count-num" id="hours">00</span><span class="count-lbl">سَاعَاتٌ</span></div>
+            <div class="count-item"><span class="count-num" id="minutes">00</span><span class="count-lbl">دَقَائِقُ</span></div>
+            <div class="count-item"><span class="count-num" id="seconds">00</span><span class="count-lbl">ثَوَانِي</span></div>
+        </div>
+
+        <!-- التقويم -->
+        <div class="calendar-box decor-box">
+            <h3>OCTOBER 2026</h3>
+            <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+
+        <!-- موقع القاعة -->
+        <div class="ornate-heading">
+            <span class="ornament-wing">❖ ══</span>
+            <span class="heading-text">مَوْقِــعُ الْحَفْـلِ</span>
+            <span class="ornament-wing">══ ❖</span>
+        </div>
+        <div class="venue-box decor-box">
+            <div class="venue-icon float-anim">🏛️</div>
+            <p class="venue-title">✨ MARRIOTT HALL ✨</p>
+            <p class="venue-sub">قاعة ماريوت</p>
+            <div class="ornament-divider">❖ ═══ ⊰ ✦ ⊱ ═══ ❖</div>
+            <p class="venue-desc">يَسْعَدُنَا حُضُورُكُمْ وَتَشْرِيفُكُمْ وَمُشَارَكَتُنَا أَجْمَلَ لَيَالِي الْعُمْرِ</p>
+            <a href="https://maps.app.goo.gl/hMG2kn66yZMZAAKV9" target="_blank" class="map-btn pulse-anim shine-effect">📍 مَوْقِعُ الْقَاعَةِ عَبْرَ Google Maps</a>
+        </div>
+
+        <!-- سجل التهاني والتبريكات -->
+        <div class="ornate-heading">
+            <span class="ornament-wing">❖ ══</span>
+            <span class="heading-text">سِجِــلُّ التَّهَانِـي</span>
+            <span class="ornament-wing">══ ❖</span>
+        </div>
+        <div class="guestbook decor-box">
+            <input type="text" id="guestName" placeholder="أَدْخِلِ اسْمَكَ الْكَرِيمَ*">
+            <textarea id="guestMessage" rows="3" placeholder="اكْتُبْ تَهْنِئَتَكَ لِسَيِّدٍ وَأَمِيرَة...*"></textarea>
+            <button onclick="addWish()" class="send-btn shine-effect">إِرْسَالُ التَّهْنِئَةِ 💌</button>
+            <div class="wishes-list" id="wishesList"></div>
+        </div>
+
+    </div>
+
+    <!-- مكتبة Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
